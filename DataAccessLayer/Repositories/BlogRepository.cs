@@ -38,6 +38,11 @@ namespace DataAccessLayer.Repositories
             return c.Blogs.Find(id);
         }
 
+        public void Insert(Blog t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Blog blog)
         {
             using var c = new Context();
