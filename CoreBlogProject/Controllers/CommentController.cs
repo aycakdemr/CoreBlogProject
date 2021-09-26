@@ -8,18 +8,20 @@ using System.Threading.Tasks;
 
 namespace CoreBlogProject.Controllers
 {
-    public class BlogController : Controller
+    public class CommentController : Controller
     {
-        BlogManager bm = new BlogManager(new EfBlogRepository());
+        
         public IActionResult Index()
         {
-            var values = bm.GetListWithCategory();
-            return View(values);
+            return View();
         }
-        public IActionResult BlogDetails(int id)
+        public PartialViewResult PartialAddComment()
         {
-            var values = bm.GetAll(id);
-            return View(values);
+            return PartialView();
+        }
+        public PartialViewResult CommentListByBlog()
+        {
+            return PartialView();
         }
     }
 }
