@@ -5,6 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\weberror\css\font-awesome.css" />
+    <None Include="wwwroot\weberror\css\style.css" />
+    <None Include="wwwroot\weberror\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\weberror\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\weberror\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\weberror\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\weberror\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\weberror\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\weberror\images\banner1.jpg" />
+    <None Include="wwwroot\weberror\index.html" />
+    <None Include="wwwroot\weberror\w3layouts-license.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="10.3.3" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
