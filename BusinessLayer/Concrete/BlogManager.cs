@@ -32,7 +32,10 @@ namespace BusinessLayer.Concrete
         {
             return _blogDal.GetAll();
         }
-
+        public List<Blog> GetLastThreeBlog()
+        {
+            return _blogDal.GetAll().Take(3).ToList();
+        }
         public List<Blog> GetAll(int id)
         {
             return _blogDal.GetAll(x => x.BlogId == id);
