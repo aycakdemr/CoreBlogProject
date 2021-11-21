@@ -1,0 +1,45 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "BlogAdd";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>Yeni Blog Girişi</h1>
+
+<br />
+@using (Html.BeginForm("BlogAdd", "Blog", FormMethod.Post)) {
+<div class="form-row">
+    <div class="col-md-6 mb-3">
+        <label for="validationCustom01">Blog Başlığı</label>
+        @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="validationCustom02">blog görseli</label>
+        @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="exampleInputPassword1 mb-2">blog küçük görsel</label>
+        @Html.TextBoxFor(x => x.BlogThumbnailImage, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group col-md-6">
+        <label for="exampleInputPassword2 mb-2">Kategori</label>
+        @Html.DropDownListFor(x => x.CategoryId,(List<SelectListItem>)ViewBag.cv, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group col-md-6">
+        <label for="exampleInputPassword2 mb-2">İçerik</label>
+        @Html.TextBoxFor(x => x.BlogContent, new { @class = "form-control" })
+
+    </div>
+</div>
+
+}
+<button type="submit" class="btn btn-primary submit mb-4">kaydet</button>
+<p>
+    <a href="#">By clicking Signup, I agree to your terms</a>
+</p>

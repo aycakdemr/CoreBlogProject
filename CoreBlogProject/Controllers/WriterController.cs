@@ -14,5 +14,15 @@ namespace CoreBlogProject.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
+        public IActionResult WriterNavbarPartial()
+        {
+            return PartialView();
+        }
+        [AllowAnonymous]
+        public IActionResult WriterFooterPartial()
+        {
+            return PartialView();
+        }
     }
 }
