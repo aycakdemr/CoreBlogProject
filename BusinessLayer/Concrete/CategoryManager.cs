@@ -47,6 +47,11 @@ namespace BusinessLayer.Concrete
             return _categoryDal.GetById(id);
         }
 
+        public int TotalCategoryCount()
+        {
+            return _categoryDal.GetAll().Count;
+        }
+
         public void Update(Category category)
         {
             _categoryDal.Update(category);
