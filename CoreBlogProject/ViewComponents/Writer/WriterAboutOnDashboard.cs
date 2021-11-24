@@ -14,7 +14,9 @@ namespace CoreBlogProject.ViewComponents.Writer
         WriterManager wm = new WriterManager(new EfWriterRepository());
         public IViewComponentResult Invoke()
         {
-            var values = wm.GetWriterById(1);
+            var usermail = User.Identity.Name;  
+            var value = wm.GetWriterIdByMail(usermail);
+            var values = wm.GetWriterById(value);
             return View(values);
         }
     }

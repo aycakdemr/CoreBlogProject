@@ -10,12 +10,12 @@ namespace CoreBlogProject.ViewComponents.Writer
 {
     public class WriterMessageNotification : ViewComponent
     {
-        WriterManager wm = new WriterManager(new EfWriterRepository());
+        MessageManager mm = new MessageManager(new EfMessageRepository());
 
         public IViewComponentResult Invoke(int id)
         {
- 
-            return View();
+            var v = mm.GetInboxListByWriter(1);
+            return View(v);
         }
     }
 }

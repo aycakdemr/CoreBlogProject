@@ -43,6 +43,11 @@ namespace BusinessLayer.Concrete
             return _writerDal.GetAll(x => x.WriterId == id);    
         }
 
+        public int GetWriterIdByMail(string mail)
+        {
+            return _writerDal.GetAll(x=>x.WriterMail == mail).Select(y=>y.WriterId).FirstOrDefault();
+        }
+
         public void Update(Writer t)
         {
             _writerDal.Update(t);

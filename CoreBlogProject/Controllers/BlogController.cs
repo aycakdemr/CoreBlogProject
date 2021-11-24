@@ -16,6 +16,7 @@ namespace CoreBlogProject.Controllers
     {
         BlogManager bm = new BlogManager(new EfBlogRepository());
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
+        WriterManager wm = new WriterManager(new EfWriterRepository());
         public IActionResult Index()
         {
             var values = bm.GetListWithCategory();
@@ -30,7 +31,9 @@ namespace CoreBlogProject.Controllers
 
         public IActionResult BlogListByWriter()
         {
-            var values = bm.GetListWithCategoryByWriter(1);
+            var usermail = User.Identity.Name;
+            var id = wm.GetWriterIdByMail(usermail);
+            var values = bm.GetListWithCategoryByWriter(id);
             return View(values);
         }
         [HttpGet]
@@ -51,7 +54,9 @@ namespace CoreBlogProject.Controllers
         {
             blog.BlogStatus = true;
             blog.BlogCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            blog.WriterId = 1;
+            var usermail = User.Identity.Name;
+            var id = wm.GetWriterIdByMail(usermail);
+            blog.WriterId = id;
             bm.Add(blog);
             return RedirectToAction("BlogListByWriter", "Blog");
         }
