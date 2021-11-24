@@ -40,4 +40,8 @@
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\writerimagefiles\" />
+  </ItemGroup>
+
 </Project>
