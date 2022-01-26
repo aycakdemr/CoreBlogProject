@@ -40,5 +40,6 @@ namespace CoreBlogProject.Areas.Admin.Controllers
             cm.Delete(value);
             return RedirectToAction("Index");
         }
+
     }
 }
